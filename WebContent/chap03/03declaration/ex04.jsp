@@ -17,7 +17,6 @@ private int multiply(int i, int j){
 </head>
 <body>
 
-
 <h1>구구단 2단부터 9단까지 출력</h1>
 
 <%--scriptlet, expression, declaration 등을 활용하여 완성 --%>
