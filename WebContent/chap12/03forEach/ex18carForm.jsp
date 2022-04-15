@@ -22,7 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
 
 <script>
-
+	// jquery : W3S 참고  
 	$(document).ready(function() {
 		$("#addOwnerButton").click(function(){
 			$("#ownerInputContainer").append("<input type='text' name='owner' /> <br>");
@@ -45,7 +45,7 @@
 		<input type="number" name="price" /><br />
 		사용가능 :
 		<input type="checkbox" name="available" value="true"/> <br />
-		사용자 <!--  button#addOwnerButton>i.fa-solid.fa-plus -->
+		사용자 :      <!--  button#addOwnerButton>i.fa-solid.fa-plus -->
 		 <button id="addOwnerButton" type="button">
 		 	<i class="fa-solid fa-plus"></i>
 		 </button>

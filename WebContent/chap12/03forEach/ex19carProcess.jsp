@@ -6,16 +6,16 @@
 <% request.setCharacterEncoding("utf-8");%>
 
 
-
 <%
 String model = request.getParameter("model");
 String priceStr = request.getParameter("price");
 String available = request.getParameter("available");
 String[] owners = request.getParameterValues("owner");
+
+
 int price = Integer.parseInt(priceStr);
 
 Car car = new Car(model, price);
-
 if (available != null && available.equals("true")){
 	car.setAvailable(true);
 }
