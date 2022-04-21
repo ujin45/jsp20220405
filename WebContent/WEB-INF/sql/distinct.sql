@@ -8,3 +8,5 @@ select distinct country from Customers;
 
 -- suppliers 테이블에서 중복없이 country 컬럼 조회
 select distinct country from Suppliers;
+
+SELECT city FROM Customers;
