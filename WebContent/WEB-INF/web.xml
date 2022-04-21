@@ -12,10 +12,21 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	
+	<listener>
+		<listener-class>chap20.ServletContextListener03</listener-class>
+	</listener>
+	
 
 	<context-param>
 		<param-name>initParamName1</param-name>
 		<param-value>initParamValue1</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>adminEmail</param-name>
+		<param-value>admin1234@gmail.com</param-value>
 	</context-param>
 
 	<session-config>
@@ -204,7 +215,6 @@
 
 
 
-
 	<filter>
 		<filter-name>filter05</filter-name>
 		<filter-class>chap19.Filter05</filter-class>
@@ -213,7 +223,9 @@
 		<filter-name>filter05</filter-name>
 		<url-pattern>/s5/memberOnly</url-pattern>	
 	</filter-mapping>
-	
+
+
+
 
 </web-app>
 
