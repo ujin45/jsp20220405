@@ -47,7 +47,7 @@ public class S14Servlet08 extends HttpServlet {
 		try(
 			Connection con = ds.getConnection();
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);) {
+			ResultSet rs = stmt.executeQuery(sql)) {
 			
 			// 조회결과 정제...
 			while (rs.next()) {

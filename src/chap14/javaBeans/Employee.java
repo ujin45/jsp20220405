@@ -7,9 +7,16 @@ public class Employee {
 	private String birthDate;
 	private String photo;
 	private String notes;
-	private String id;
+	private int id;
+
 	
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getPhoto() {
 		return photo;
 	}
@@ -22,12 +29,7 @@ public class Employee {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -46,11 +48,5 @@ public class Employee {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
-	public void setId(int int1) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	
-
 }
