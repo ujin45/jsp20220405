@@ -17,7 +17,6 @@ SELECT * FROM Products ORDER BY Price DESC LIMIT 0, 3;
 -- Products table 조회해서 2번째로 가격이 비싼 상품부터 4번째로 가격이 비싼  상품 조회
 SELECT * FROM Products ORDER BY Price DESC LIMIT 1, 3;
 
-
 -- 직원 중 두번째로 나이가 많은 사람 조회
 SELECT * FROM Employees ORDER BY BirthDate LIMIT  1, 1;
 
@@ -25,7 +24,25 @@ SELECT * FROM Employees ORDER BY BirthDate LIMIT  1, 1;
 SELECT * FROM Employees ORDER BY BirthDate DESC LIMIT  1, 1;
 
 
+SELECT * FROM 토론실 ORDER BY WRITE_DATETIME DESC LIMIT 150, 30;
 
+SELECT COUNT(*) FROM Customers;
+DESC Customers;
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+(SELECT CustomerName, ContactName, Address, City, PostalCode, Country FROM Customers);
+
+-- 페이징(한 페이지에 10개)
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 0, 10;  -- 1페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 10, 10;  -- 2페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 20, 10;  -- 3페이지
+SELECT * FROM Customers ORDER BY CustomerID LIMIT 30, 10;  -- 4페이지
+
+-- 시작 위치가 (page 번호 - 1) * 한페이지당 몇 개
+
+SELECT COUNT(*) FROM Employees;
+DESC Employees;
+INSERT INTO Employees ( FirstName, LastName, BirthDate, Photo, Notes)
+(SELECT FirstName, LastName, BirthDate, Photo, Notes FROM Employees);
 
 
 
