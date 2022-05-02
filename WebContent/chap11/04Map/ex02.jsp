@@ -26,7 +26,7 @@
 	pageContext.setAttribute("map2", m2);
 	%>
 
-<p>${map1["boy group"] }</p>
+<p>${map1['boy group'] }</p>
 <p>${map1["girl group"] }</p> <br />
 
 <p>${map2.car }</p>

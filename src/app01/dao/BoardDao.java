@@ -23,7 +23,7 @@ public class BoardDao {
 
 		// connection
 		// statement
-		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (PreparedStatement pstmt = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
 				pstmt.setNString(1, dto.getTitle());
 				pstmt.setNString(2, dto.getBody());
 
@@ -34,6 +34,15 @@ public class BoardDao {
 
 			// execute query
 			result = pstmt.executeUpdate();
+			
+			// resultSet 자동 생성된 키 얻기
+			 try (ResultSet rs = pstmt.getGeneratedKeys();) {
+				 if(rs.next()) {
+//					 System.out.println(rs.getInt(1));
+					 dto.setId(rs.getInt(1));
+					 
+				 }
+			 }
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,5 +103,41 @@ public class BoardDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public boolean modify(Connection con, BoardDto board) {
+		
+		String sql ="UPDATE Board "
+				+ "SET title = ?, "
+				+ "    body = ? "
+				+ "WHERE id = ?";
+		try(PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setNString(1, board.getTitle());
+			pstmt.setNString(2, board.getBody());
+			pstmt.setInt(3, board.getId());
+			
+			int count = pstmt.executeUpdate();
+			
+			return count == 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean delete(Connection con, int id) {
+		String sql = "DELETE FROM Board "
+					+ "WHERE id = ? ";
+		
+		try (PreparedStatement pstmt = con.prepareStatement(sql)){
+				pstmt.setInt(1, id);
+				
+				int count = pstmt.executeUpdate();
+				return count == 1;
+					
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
