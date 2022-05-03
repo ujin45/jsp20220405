@@ -60,7 +60,7 @@ public class ReplyInsertServlet extends HttpServlet {
 		replyDto.setBoardId(Integer.parseInt(boardId));
 		
 		
-		// bussiness logic 처리
+		// business logic 처리
 		ReplyDao  dao = new ReplyDao();
 		boolean success = false;
 		try (Connection con = ds.getConnection()){
